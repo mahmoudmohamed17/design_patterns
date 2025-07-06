@@ -1,0 +1,6 @@
+Adapter is a structural design pattern that allows
+objects with incompatible interfaces to collaborate.
+Common example when need to inegrate a 3rd party service or package
+with a different interface from our code and don't have a direct
+access to its source code, here we use it as a middle layer to work
+as a translator between two interfaces.
