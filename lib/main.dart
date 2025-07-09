@@ -1,18 +1,19 @@
-import 'Strategy/cash_payment.dart';
-import 'Strategy/credit_card_payment.dart';
-import 'Strategy/order.dart';
-import 'Strategy/pay_pal_payment.dart';
+import 'Mediator/chat_room.dart';
+import 'Mediator/normal_user.dart';
+import 'Mediator/premium_user.dart';
 
 void main() {
-  var order = Order();
-  var creditCard = CreditCardPayment(cardNumber: '1234-5678-9012-3456');
-  order.paymentStrategy = creditCard;
-  order.pay(150);
-  var payPal = PayPalPayment(paypalAccount: 'mahmoud@example.com');
-  order.paymentStrategy = payPal;
-  order.paymentStrategy = payPal;
-  order.pay(80);
-  var cash = CashPayment();
-  order.paymentStrategy = cash;
-  order.pay(50);
+  var chatRoom = ChatRoom();
+  var user1 = NormalUser(chatRoom, 'Mahmoud');
+  var user2 = PremiumUser(chatRoom, 'Tarik');
+  var user3 = NormalUser(chatRoom, 'Nabil');
+  var user4 = PremiumUser(chatRoom, 'Eslam');
+
+  chatRoom.addUser(user: user1);
+  chatRoom.addUser(user: user2);
+  chatRoom.addUser(user: user3);
+  chatRoom.addUser(user: user4);
+
+  user1.send(message: 'Hello world!');
+  user4.send(message: 'We are feel good, what about you?');
 }
