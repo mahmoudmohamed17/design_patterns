@@ -1,6 +1,6 @@
-// The context class, which enables selecting the proper payment strategy
 import 'payment_strategy.dart';
 
+// The context class, which enables selecting the proper payment strategy
 class Order {
   late PaymentStrategy _paymentStrategy;
 

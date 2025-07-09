@@ -1,19 +1,13 @@
-import 'Mediator/chat_room.dart';
-import 'Mediator/normal_user.dart';
-import 'Mediator/premium_user.dart';
+import 'State/coffee_machine.dart';
 
 void main() {
-  var chatRoom = ChatRoom();
-  var user1 = NormalUser(chatRoom, 'Mahmoud');
-  var user2 = PremiumUser(chatRoom, 'Tarik');
-  var user3 = NormalUser(chatRoom, 'Nabil');
-  var user4 = PremiumUser(chatRoom, 'Eslam');
+  var coffeeMachine = CoffeeMachine();
 
-  chatRoom.addUser(user: user1);
-  chatRoom.addUser(user: user2);
-  chatRoom.addUser(user: user3);
-  chatRoom.addUser(user: user4);
-
-  user1.send(message: 'Hello world!');
-  user4.send(message: 'We are feel good, what about you?');
+  print('Current state: ${coffeeMachine.getCurrentState}');
+  coffeeMachine.insertCoin();
+  print('Current state: ${coffeeMachine.getCurrentState}');
+  coffeeMachine.selectCoffee();
+  print('Current state: ${coffeeMachine.getCurrentState}');
+  coffeeMachine.dispenseCoffee();
+  print('Current state: ${coffeeMachine.getCurrentState}');
 }
