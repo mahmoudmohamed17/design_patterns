@@ -3,6 +3,7 @@ import 'user.dart';
 
 class ChatRoom implements ChatMediator {
   final List<User> _users = [];
+  
   @override
   void sendMessage({required String message, required User sender}) {
     for (var user in _users) {

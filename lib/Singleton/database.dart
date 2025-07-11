@@ -10,7 +10,7 @@ class Database {
     return _instance!;
   }
 
-  void query() {
+  void select() {
     print('SELECT...');
   }
 
